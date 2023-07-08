@@ -1,0 +1,3 @@
+/Users/tedwu/CLionProjects/CommonQuestions/cmake-build-debug/CMakeFiles/CommonQuestions.dir
+/Users/tedwu/CLionProjects/CommonQuestions/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/tedwu/CLionProjects/CommonQuestions/cmake-build-debug/CMakeFiles/rebuild_cache.dir
