@@ -122,9 +122,32 @@ void arrayPointer() {
     int second = *((*ptr) + 1);
 }
 
+// Union
+union student {
+    int id;
+    char name[64];
+};
+
+/*
+ * union: all the members in this union are shared the same memory location
+ * And the size of memory is based on the largest member, in this case is 64
+ */
+void unionTest() {
+    printf("int size: %d\n", sizeof(int));
+
+    union student s1;
+    s1.id = 1;
+    printf("union size: %d\n", sizeof(s1));
+
+    union student s2;
+    strcpy(s2.name, "shengyu");
+    printf("union size: %d\n", sizeof(s2));
+}
+
 int main() {
     //structAndClass();
     //newAndMalloc();
     //RAII();
+    unionTest();
     return 0;
 }
