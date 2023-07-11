@@ -42,6 +42,10 @@ struct carStruct {
     carStruct() {
         cout<<"struct car"<<endl;
     }
+private:
+    virtual void func() {
+        cout<<"virtual void";
+    }
 };
 
 class carClass {
@@ -65,7 +69,7 @@ public:
 };
 void newAndMalloc() {
     Apple* apple = new Apple("new");
-    Apple* apple2 = (Apple*) malloc(sizeof(Apple*)*1);
+    Apple* apple2 = (Apple*) malloc(sizeof(Apple)*10);
 
     delete apple;
     free(apple2);
@@ -90,10 +94,10 @@ void RAII() {
 //Abstract class
 class AbstractOrane {
 public:
-    AbstractApple() {
-
+    virtual void run() = 0; // pure virtual
+    virtual void func() {
+        cout<<"";
     }
-    virtual void run() = 0;
 };
 
 class Orange : public AbstractOrane {
@@ -106,6 +110,17 @@ public:
     };
 
 };
+
+
+// Array pointer
+void arrayPointer() {
+    int (*ptr)[2];
+    int arr[2] = {0, 1};
+    ptr = &arr;// &arr is entire array address
+    // (*ptr): this is arr, which means the address of 1st element
+    // (*ptr) + 1: this is the address of 2nd element
+    int second = *((*ptr) + 1);
+}
 
 int main() {
     //structAndClass();
